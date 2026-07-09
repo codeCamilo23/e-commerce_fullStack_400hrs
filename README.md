@@ -1,9 +1,35 @@
 # e-commerce_fullStack_400hrs
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
-Node.js (versión 18 o superior)
-pnpm
-MongoDB (local o una conexión a MongoDB Atlas)
+# 🛒 E-Commerce Full Stack
+
+## Descripción General
+
+E-Commerce Full Stack es un aplicativo web desarrollado como proyecto de formación, cuyo objetivo es gestionar la venta de productos mediante una arquitectura cliente-servidor.
+
+El backend está desarrollado con Node.js, Express.js y MongoDB utilizando Mongoose como ODM para la gestión de la base de datos.
+
+ Funcionalidades principales
+
+- Registro y autenticación de usuarios.
+- Gestión de roles de usuario.
+- Gestión de categorías.
+- Gestión de productos.
+- Conexión con base de datos MongoDB.
+- API REST para las operaciones CRUD.
+- Organización del proyecto bajo una arquitectura modular.
+
+---
+
+# Requisitos Previos
+
+Antes de ejecutar el proyecto es necesario tener instalado:
+
+- Node.js (versión 18 o superior)
+- pnpm
+- MongoDB Community Server o MongoDB Atlas
+- MongoDB Compass (opcional para administrar la base de datos)
+- Visual Studio Code
+- Git
 
 2. paso
 Clonar el repositorio
@@ -58,10 +84,44 @@ http://localhost:3000/
 Si todo está configurado correctamente, el servidor responderá con un mensaje indicando que Express está funcionando.
 
 Tecnologías utilizadas
-Node.js
-Express.js
-MongoDB
-Mongoose
-Dotenv
-Nodemon
-pnpm
+JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Dotenv
+- Nodemon
+- pnpm
+- Git
+- GitHub
+
+Estructura del Proyecto
+
+backend/
+│
+├── src/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── middlewares/
+│
+├── app.js
+├── package.json
+└── .env
+
+Estado del Proyecto
+
+🚧 Proyecto en desarrollo.
+
+Actualmente se encuentra en la fase de implementación del backend, incluyendo la configuración del servidor, conexión con MongoDB, definición de modelos de datos y desarrollo de los servicios REST.
+
+---
+
+# Contacto
+
+**Autor:** Camilo Rueda López
+
+GitHub:
+
+https://github.com/codeCamilo23
