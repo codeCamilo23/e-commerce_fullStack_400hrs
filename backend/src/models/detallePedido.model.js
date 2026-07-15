@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
+import { type } from "node:os";
 
 const detallePedidoSchema = new mongoose.Schema({
-  pedidoNo
-  
-  : {
+  pedido: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Pedido",
     required: true,
@@ -25,8 +24,8 @@ const detallePedidoSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  iva:{
-    type:number,
+  notas:{
+    type: String,
     required: true,
   },
 

@@ -17,6 +17,10 @@ const carritoSchema = new mongoose.Schema(
           type: Number,
           default: 1,
         },
+        precio:{
+          type:Number,
+          default:1
+        }
       },
     ],
     total: {
