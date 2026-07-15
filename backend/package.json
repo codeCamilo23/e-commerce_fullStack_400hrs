@@ -1,0 +1,39 @@
+{
+  "name": "multiregalos-shop-api",
+  "version": "1.0.0",
+  "description": "RESTful API para Multiregalos shop e.commerce, plataforma desarrollada con Node.js, Express,js, and mongoDB.  Gestiona productos, categorías, usuarios, pedidos y existencias para la venta al por mayor y al por menor de juguetes, juegos educativos y material de papelería.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "rest-api",
+    "api",
+    "node",
+    "express",
+    "mongoDB",
+    "Javascript",
+    "productos"
+    
+  ],
+  "author": "Camilo Rueda Lopez",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.9.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "3.1.14"
+  },
+  "dependencies": {
+    "dotenv": "17.4.2",
+    "express": "5.2.1",
+    "mongoose": "9.7.3"
+  }
+}

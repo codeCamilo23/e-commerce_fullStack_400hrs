@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 //establecer la conexion con la base de datos
 //para ello se crea una funcion asincronica
 
-export async function conectionMongo {
+export async function conectionMongo (){
     try{
         await mongoose.connect(process.env.URI_MONGO);
         
