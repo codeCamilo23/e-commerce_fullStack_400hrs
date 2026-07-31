@@ -30,6 +30,10 @@ const productoSchema = new mongoose.Schema(
       type: Number,
       default: true,
     },
+    disponible: {
+      type: Boolean,
+      
+    },
     
   },
   {
@@ -37,4 +41,4 @@ const productoSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Producto", productoSchema);
+export const productModel = mongoose.model('Producto',productoSchema);

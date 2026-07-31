@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
-import { type } from "node:os";
 
 const detallePedidoSchema = new mongoose.Schema({
-  pedido: {
+  pedido:  {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Pedido",
     required: true,
@@ -18,17 +17,23 @@ const detallePedidoSchema = new mongoose.Schema({
   },
   precioUnitario: {
     type: Number,
-    required: true,
-  },
-  precioTotal: {
-    type: Number,
-    required: true,
+    required: true
   },
   notas:{
     type: String,
-    required: true,
-  },
+    triam:true,
+    default: ""
+    }
+  
+  
+    {
+    timestamps:true
+  });
 
-});
+  detallePedidoSchema.index({
+    pedido:1
+  });
+
+
 
 export default mongoose.model("DetallePedido", detallePedidoSchema);

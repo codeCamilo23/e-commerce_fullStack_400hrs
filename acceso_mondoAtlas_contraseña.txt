@@ -1,0 +1,7 @@
+usenamer mongo atlas
+camiloerueda_db_user
+contraseña
+8NHBWDsRL8cqRInE
+
+
+mongodb+srv://camiloerueda_db_user:Gu2QTiQFgtK7FkPd@proyectoclase.lc9qcpn.mongodb.net/?appName=proyectoClase

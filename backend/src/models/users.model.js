@@ -1,3 +1,7 @@
+import mongoose from "mongoose"
+
+const {Schema,model}=mongoose;
+
 const userSchema = new Schema({
 
     nombreCompleto:{
@@ -17,13 +21,14 @@ const userSchema = new Schema({
     },
 
     rol:{
-        type:String,
-        enum:["cliente","administrador"],
-        default:"cliente"
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Rol",
+        required:true
+        
     }
 
 },{
     timestamps:true
 })
 
-
+export const userModel1=mongoose.model("Usuario",userSchema)
