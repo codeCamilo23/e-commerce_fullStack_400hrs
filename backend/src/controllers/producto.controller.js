@@ -107,8 +107,7 @@ export const deleteProductById = async (request, response) => {
         let idForDelete = request.params.id;
         // lo que se elimina no lo tenemos que guardar en variables
         // escuentreme el producto con ese id y elimínelo
-       await product
-       Model.findByIdAndDelete(idForDelete);
+       await productModel.findByIdAndDelete(idForDelete);
 
         return response.status(200).json({
             mensaje: 'Producto eliminado satisfactoriamente'

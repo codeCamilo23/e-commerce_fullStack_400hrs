@@ -17,7 +17,7 @@ export const createUser = async (req, res) => {
   try {
     console.log(req.body);
     // Deestructuración -> nos va a permitir acceder a cada una de las variables suministradas por el usuario en el req.body
-    const {nombreCompleto, correo, password} = req.body;
+    const {nombreCompleto, correo, password,rol} = req.body;
 
     // password = sancocho;
 
@@ -31,6 +31,7 @@ export const createUser = async (req, res) => {
         nombreCompleto,
         correo,
         password:codedPassword,
+        rol,
     });
 
     // 201-> se creó correctamente
@@ -139,3 +140,39 @@ export const loginUser = async (req, res) => {
 
 
 //peticion DELETE  --> eliminar usuarios
+// --------------------------------------------------
+// Petición DELETE -> Eliminar usuario por ID
+export const deleteUserById = async (req, res) => {
+
+    // Manejo de errores
+    try {
+
+        // Obtener el ID enviado por la URL
+        const idForDelete = req.params.id;
+
+        // Buscar el usuario y eliminarlo
+        const deletedUser = await userModel1.findByIdAndDelete(idForDelete);
+
+        // Validar si el usuario existe
+        if (!deletedUser) {
+            return res.status(404).json({
+                mensaje: "No se encontró el usuario para eliminar"
+            });
+        }
+
+        // Respuesta exitosa
+        return res.status(200).json({
+            mensaje: "Usuario eliminado correctamente",
+            datos: deletedUser
+        });
+
+    } catch (error) {
+
+        return res.status(400).json({
+            mensaje: "Ocurrió un error al eliminar el usuario",
+            problema: error.message || error
+        });
+
+    }
+
+};

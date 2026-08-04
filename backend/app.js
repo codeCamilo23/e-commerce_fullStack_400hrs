@@ -6,6 +6,7 @@ import { conectionMongo } from "./src/config/dataBase.js";
 
 import { productsRouter } from "./src/routes/productos.routes.js";
 import { usuarioRouter } from "./src/routes/users.routes.js";
+import { categoriaRouter } from "./src/routes/categoria.routes.js";
 
 
 //2. crear las configuraciones necesarias
@@ -22,9 +23,9 @@ conectionMongo();//llamar a la funcion para conectar a la bd
 app.use(express.json());//permite recibir datos en formato json 
 
 
-app.use("/usuarios",usuarioRouter)
+app.use("/usuarios",usuarioRouter);
 app.use("/productos",productsRouter);
-
+app.use("/categoria",categoriaRouter);
 
 // Iniciar servidor
 app.listen(port, () => {

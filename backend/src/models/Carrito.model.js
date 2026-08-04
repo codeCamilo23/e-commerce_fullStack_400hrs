@@ -17,10 +17,10 @@ const carritoSchema = new mongoose.Schema(
           type: Number,
           default: 1,
         },
-        precio:{
-          type:Number,
-          default:1
-        }
+        precioUnitario: {
+          type: Number,
+          default: 1,
+        },
       },
     ],
     total: {
@@ -30,7 +30,7 @@ const carritoSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-export default mongoose.model("carrito", carritoSchema);
+export default mongoose.model("Carrito", carritoSchema);
