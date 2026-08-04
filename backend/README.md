@@ -438,57 +438,57 @@ Se utiliza
 
 ## Usuarios
 
-| Método | Endpoint |
-|---------|----------|
-| POST | /usuarios/registrar |
-| POST | /usuarios/iniciar-sesion |
-| GET | /usuarios/mostrar |
-| DELETE | /usuarios/eliminar/:id |
+| Método | Endpoint                 |
+| ------ | ------------------------ |
+| POST   | /usuarios/registrar      |
+| POST   | /usuarios/iniciar-sesion |
+| GET    | /usuarios/mostrar        |
+| DELETE | /usuarios/eliminar/:id   |
 
 ---
 
 ## Productos
 
-| Método | Endpoint |
-|---------|----------|
-| POST | /productos/crear |
-| GET | /productos/mostrar |
-| PUT | /productos/actualizar/:id |
-| DELETE | /productos/eliminar/:id |
+| Método | Endpoint                  |
+| ------ | ------------------------- |
+| POST   | /productos/crear          |
+| GET    | /productos/mostrar        |
+| PUT    | /productos/actualizar/:id |
+| DELETE | /productos/eliminar/:id   |
 
 ---
 
 ## Categorías
 
-| Método | Endpoint |
-|---------|----------|
-| POST | /categorias/crear |
-| GET | /categorias/mostrar |
-| PUT | /categorias/actualizar/:id |
-| DELETE | /categorias/eliminar/:id |
+| Método | Endpoint                   |
+| ------ | -------------------------- |
+| POST   | /categorias/crear          |
+| GET    | /categorias/mostrar        |
+| PUT    | /categorias/actualizar/:id |
+| DELETE | /categorias/eliminar/:id   |
 
 ---
 
 ## Roles
 
-| Método | Endpoint |
-|---------|----------|
-| POST | /roles/crear |
-| GET | /roles/mostrar |
-| PUT | /roles/actualizar/:id |
-| DELETE | /roles/eliminar/:id |
+| Método | Endpoint              |
+| ------ | --------------------- |
+| POST   | /roles/crear          |
+| GET    | /roles/mostrar        |
+| PUT    | /roles/actualizar/:id |
+| DELETE | /roles/eliminar/:id   |
 
 ---
 
 ## Carrito
 
-| Método | Endpoint |
-|---------|----------|
-| POST | /carrito/agregar |
-| GET | /carrito/mostrar/:usuario |
-| PUT | /carrito/actualizar/:usuario |
+| Método | Endpoint                                     |
+| ------ | -------------------------------------------- |
+| POST   | /carrito/agregar                             |
+| GET    | /carrito/mostrar/:usuario                    |
+| PUT    | /carrito/actualizar/:usuario                 |
 | DELETE | /carrito/eliminarProducto/:usuario/:producto |
-| DELETE | /carrito/vaciar/:usuario |
+| DELETE | /carrito/vaciar/:usuario                     |
 
 ---
 
