@@ -19,7 +19,11 @@ const carritoSchema = new mongoose.Schema(
         },
         precioUnitario: {
           type: Number,
-          default: 1,
+          required: true,
+        },
+        subtotal: {
+          type: Number,
+          default: 0,
         },
       },
     ],

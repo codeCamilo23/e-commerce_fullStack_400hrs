@@ -1,127 +1,530 @@
-# e-commerce_fullStack_400hrs
+# 🛒 E-Commerce Backend API
 
-# 🛒 E-Commerce Full Stack
+Backend desarrollado con **Node.js**, **Express**, **MongoDB** y **Mongoose** para un sistema de comercio electrónico.
 
-## Descripción General
-
-E-Commerce Full Stack es un aplicativo web desarrollado como proyecto de formación, cuyo objetivo es gestionar la venta de productos mediante una arquitectura cliente-servidor.
-
-El backend está desarrollado con Node.js, Express.js y MongoDB utilizando Mongoose como ODM para la gestión de la base de datos.
-
- Funcionalidades principales
-
-- Registro y autenticación de usuarios.
-- Gestión de roles de usuario.
-- Gestión de categorías.
-- Gestión de productos.
-- Conexión con base de datos MongoDB.
-- API REST para las operaciones CRUD.
-- Organización del proyecto bajo una arquitectura modular.
+Este proyecto implementa una API REST con autenticación mediante JWT, manejo de usuarios, productos, categorías, roles, carrito de compras y pedidos.
 
 ---
 
-# Requisitos Previos
+# 🚀 Tecnologías utilizadas
 
-Antes de ejecutar el proyecto es necesario tener instalado:
-
-- Node.js (versión 18 o superior)
-- pnpm
-- MongoDB Community Server o MongoDB Atlas
-- MongoDB Compass (opcional para administrar la base de datos)
-- Visual Studio Code
-- Git
-
-2. paso
-Clonar el repositorio
-
-git clone https://github.com/codeCamilo23/e-commerce_fullStack_400hrs.git
-
-cd e-commerce_fullStack_400hrs
-
-Instalar las dependencias
-pnpm install
-Configurar las variables de entorno
-
-3. paso
-Para probar la conexión a mongodb, antes de crear los modelos, controladores o rutas se debe asegurar
-    •	Que la app se conecta a la base de datos
-      1.	Instalar mongoose
-	        Pnpm add mongoose
-        	
-      2.	Crear el archivo de conexión
-	        Config/dataBase.js
-      3.	Configurar el archivo .env
-		      .env 
-		        PORT=3000
-        		URI_MONGO= MONGODB://LOCALHOST:
-      4.	CARGAR LAS VARIABLES DE ENTORNO
-      5.	
-		        EN app.js => import dotenv from “dotenv”
-			      dotenv.config()
-  	
-LISTA DE CHEQUEO – CONEXIÓN MONGODB
-•  ✔️ Instalacion Mongoose. 
-•  ✔️ Creacion un módulo para la conexión (dataBase.js). 
-•  ✔️ Guardar la URI en un archivo .env. 
-•  ✔️ Llamar a conectionMongo() desde app.js. 
-•  ✔️ El servidor muestra en consola que la conexión fue exitosa.
-
-
-para probar la conexion
-En modo desarrollo:
-
-pnpm run dev
-
-O con Nodemon:
-
-nodemon app.js
-Verificar el funcionamiento
-
-Abre el navegador o una herramienta como Postman y visita:
-
-http://localhost:3000/
-
-Si todo está configurado correctamente, el servidor responderá con un mensaje indicando que Express está funcionando.
-
-Tecnologías utilizadas
-JavaScript
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
-- Dotenv
+- JWT (JSON Web Token)
+- bcryptjs
+- dotenv
 - Nodemon
 - pnpm
-- Git
-- GitHub
 
-Estructura del Proyecto
+---
 
+# 📂 Estructura del proyecto
+
+```
 backend/
 │
 ├── src/
 │   ├── config/
+│   │     database.js
+│   │
 │   ├── controllers/
+│   │     usuario.controller.js
+│   │     producto.controller.js
+│   │     categoria.controller.js
+│   │     rol.controller.js
+│   │     carrito.controller.js
+│   │     pedido.controller.js
+│   │     detallePedido.controller.js
+│   │     cliente.controller.js
+│   │     proveedor.controller.js
+│   │
+│   ├── middlewares/
+│   │     auth.middleware.js
+│   │
 │   ├── models/
+│   │     users.model.js
+│   │     product.model.js
+│   │     categoria.model.js
+│   │     rol.model.js
+│   │     carrito.model.js
+│   │     pedido.model.js
+│   │     detallePedido.model.js
+│   │     cliente.model.js
+│   │     proveedor.model.js
+│   │
 │   ├── routes/
-│   └── middlewares/
+│   │     users.routes.js
+│   │     productos.routes.js
+│   │     categorias.routes.js
+│   │     roles.routes.js
+│   │     carrito.routes.js
+│   │     pedidos.routes.js
+│   │     detallePedido.routes.js
+│   │     clientes.routes.js
+│   │     proveedores.routes.js
 │
+├── .env
 ├── app.js
 ├── package.json
-└── .env
-
-Estado del Proyecto
-
-🚧 Proyecto en desarrollo.
-
-Actualmente se encuentra en la fase de implementación del backend, incluyendo la configuración del servidor, conexión con MongoDB, definición de modelos de datos y desarrollo de los servicios REST.
+└── README.md
+```
 
 ---
 
-# Contacto
+# ⚙ Instalación
 
-**Autor:** Camilo Rueda López
+Clonar el repositorio
 
-GitHub:
+```bash
+git clone https://github.com/TU-USUARIO/e-commerce.git
+```
 
-https://github.com/codeCamilo23
+Entrar al proyecto
+
+```bash
+cd backend
+```
+
+Instalar dependencias
+
+```bash
+pnpm install
+```
+
+Ejecutar el servidor
+
+```bash
+pnpm run dev
+```
+
+---
+
+# Variables de entorno
+
+Crear un archivo
+
+```
+.env
+```
+
+Ejemplo
+
+```env
+PORT=3000
+
+URI_MONGO=mongodb+srv://usuario:password@cluster.mongodb.net/ecommerce
+
+JWT_SECRET=MiClaveSuperSecreta
+```
+
+---
+
+# Arquitectura
+
+La aplicación utiliza una arquitectura basada en capas.
+
+```
+Cliente
+
+↓
+
+Routes
+
+↓
+
+Controllers
+
+↓
+
+Models
+
+↓
+
+MongoDB
+```
+
+---
+
+# Módulos implementados
+
+## Usuarios
+
+Funciones implementadas
+
+- Registrar usuario
+- Mostrar usuarios
+- Login
+- Encriptación de contraseña
+- Generación de Token JWT
+- Eliminar usuario
+
+Colección
+
+```
+usuarios
+```
+
+---
+
+## Roles
+
+Permite administrar los permisos del sistema.
+
+Ejemplos
+
+- Administrador
+- Cliente
+
+Funciones
+
+- Crear rol
+- Mostrar roles
+- Actualizar rol
+- Eliminar rol
+
+---
+
+## Categorías
+
+Clasificación de productos.
+
+Ejemplos
+
+- Papelería
+- Juguetería
+- Tecnología
+
+Funciones
+
+- Crear categoría
+- Mostrar categorías
+- Actualizar categoría
+- Eliminar categoría
+
+---
+
+## Productos
+
+Funciones
+
+- Crear producto
+- Mostrar productos
+- Buscar producto por ID
+- Actualizar producto
+- Eliminar producto
+
+Cada producto pertenece a una categoría.
+
+---
+
+## Clientes
+
+CRUD completo.
+
+---
+
+## Proveedores
+
+CRUD completo.
+
+---
+
+## Carrito de compras
+
+Actualmente implementa:
+
+- Agregar producto
+- Crear carrito automáticamente
+- Validar usuario
+- Validar producto
+- Incrementar cantidad si el producto ya existe
+- Calcular subtotal automáticamente
+- Calcular total automáticamente
+- Mostrar información completa mediante Populate
+
+Pendiente
+
+- Mostrar carrito
+- Actualizar cantidad
+- Eliminar producto
+- Vaciar carrito
+
+---
+
+## Pedido
+
+Implementado
+
+Modelo y controlador básico.
+
+Pendiente
+
+- Checkout
+- Confirmar compra
+- Descontar inventario
+- Cambiar estado del pedido
+
+---
+
+## Detalle Pedido
+
+Funciones
+
+- Registrar detalle
+- Consultar detalles
+- Actualizar detalle
+- Eliminar detalle
+
+Cada detalle almacena
+
+- Producto
+- Cantidad
+- Precio Unitario
+- Subtotal
+
+---
+
+# Relaciones entre modelos
+
+```
+Usuario
+
+│
+
+├───────────────┐
+
+│               │
+
+▼               ▼
+
+Rol          Carrito
+
+                │
+
+                ▼
+
+           Productos
+
+                │
+
+                ▼
+
+            Categoría
+
+                │
+
+                ▼
+
+             Pedido
+
+                │
+
+                ▼
+
+         Detalle Pedido
+```
+
+---
+
+# Flujo del carrito
+
+```
+Usuario
+
+↓
+
+Selecciona producto
+
+↓
+
+Buscar carrito
+
+↓
+
+¿Existe?
+
+↓
+
+No
+
+↓
+
+Crear carrito
+
+↓
+
+Agregar producto
+
+↓
+
+¿Ya existe?
+
+↓
+
+Sí
+
+↓
+
+Incrementar cantidad
+
+↓
+
+Recalcular subtotal
+
+↓
+
+Recalcular total
+
+↓
+
+Guardar carrito
+```
+
+---
+
+# Flujo completo del E-Commerce
+
+```
+Registro
+
+↓
+
+Login
+
+↓
+
+Productos
+
+↓
+
+Categorías
+
+↓
+
+Carrito
+
+↓
+
+Pedido
+
+↓
+
+Detalle Pedido
+
+↓
+
+Actualizar Inventario
+
+↓
+
+Compra finalizada
+```
+
+---
+
+# Seguridad
+
+Se utiliza
+
+- bcrypt para encriptar contraseñas
+- JWT para autenticación
+- Variables de entorno con dotenv
+
+---
+
+# Endpoints principales
+
+## Usuarios
+
+| Método | Endpoint                 |
+| ------ | ------------------------ |
+| POST   | /usuarios/registrar      |
+| POST   | /usuarios/iniciar-sesion |
+| GET    | /usuarios/mostrar        |
+| DELETE | /usuarios/eliminar/:id   |
+
+---
+
+## Productos
+
+| Método | Endpoint                  |
+| ------ | ------------------------- |
+| POST   | /productos/crear          |
+| GET    | /productos/mostrar        |
+| PUT    | /productos/actualizar/:id |
+| DELETE | /productos/eliminar/:id   |
+
+---
+
+## Categorías
+
+| Método | Endpoint                   |
+| ------ | -------------------------- |
+| POST   | /categorias/crear          |
+| GET    | /categorias/mostrar        |
+| PUT    | /categorias/actualizar/:id |
+| DELETE | /categorias/eliminar/:id   |
+
+---
+
+## Roles
+
+| Método | Endpoint              |
+| ------ | --------------------- |
+| POST   | /roles/crear          |
+| GET    | /roles/mostrar        |
+| PUT    | /roles/actualizar/:id |
+| DELETE | /roles/eliminar/:id   |
+
+---
+
+## Carrito
+
+| Método | Endpoint                                     |
+| ------ | -------------------------------------------- |
+| POST   | /carrito/agregar                             |
+| GET    | /carrito/mostrar/:usuario                    |
+| PUT    | /carrito/actualizar/:usuario                 |
+| DELETE | /carrito/eliminarProducto/:usuario/:producto |
+| DELETE | /carrito/vaciar/:usuario                     |
+
+---
+
+# Estado actual del proyecto
+
+## Módulos terminados
+
+- Usuarios
+- Roles
+- Categorías
+- Productos
+- Clientes
+- Proveedores
+- Carrito (en desarrollo avanzado)
+
+---
+
+## Próximas mejoras
+
+- Checkout
+- Órdenes de compra
+- Pasarela de pagos
+- Historial de pedidos
+- Gestión de inventario automática
+- Recuperación de contraseña
+- Middleware de autorización por roles
+- Validaciones con express-validator
+- Documentación con Swagger
+- Pruebas unitarias
+- Docker
+- Despliegue en Render o Railway
+
+---
+
+# Autor
+
+**Camilo Rueda López**
+
+Proyecto desarrollado como práctica de aprendizaje en **Node.js + Express + MongoDB + Mongoose (MEAN Stack)**, aplicando arquitectura MVC, desarrollo de APIs REST y buenas prácticas de programación.

@@ -27,6 +27,8 @@ app.use("/usuarios",usuarioRouter);
 app.use("/productos",productsRouter);
 app.use("/categoria",categoriaRouter);
 
+
+
 // Iniciar servidor
 app.listen(port, () => {
   console.log(`Servidor ejecutándose en http://localhost:${port}`);
