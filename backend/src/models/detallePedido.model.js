@@ -1,39 +1,42 @@
 import mongoose from "mongoose";
 
-const detallePedidoSchema = new mongoose.Schema({
-  pedido:  {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Pedido",
-    required: true,
-  },
-  producto: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Producto",
-    required: true,
-  },
-  cantidad: {
-    type: Number,
-    required: true,
-  },
-  precioUnitario: {
-    type: Number,
-    required: true
-  },
-  notas:{
-    type: String,
-    triam:true,
-    default: ""
-    }
-  
-  
-    {
-    timestamps:true
-  });
+const detallePedidoSchema = new mongoose.Schema(
+  {
+    pedido: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Pedido",
+      required: true,
+    },
 
-  detallePedidoSchema.index({
-    pedido:1
-  });
+    producto: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Producto",
+      required: true,
+    },
 
+    cantidad: {
+      type: Number,
+      required: true,
+    },
 
+    precioUnitario: {
+      type: Number,
+      required: true,
+    },
+
+    notas: {
+      type: String,
+      default: "",
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+// Índice para buscar rápidamente los detalles de un pedido
+detallePedidoSchema.index({
+  pedido: 1,
+});
 
 export default mongoose.model("DetallePedido", detallePedidoSchema);

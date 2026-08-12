@@ -64,10 +64,6 @@ export const getProduct = async (request, response) => {
 // petición PUT -> para actualizar productos
 // actualizar un producto en particular -> actualizar por ID
 export const putProductById = async (request, response) => {
-
-
-    
-
     // LÓGICA DE LA PETICIÓN PUT
     try {
         let idForPut = request.params.id; //el parámetro id del producto que queremos actualizar

@@ -1,6 +1,6 @@
 import carritoModel from "../models/Carrito.model.js";
-import productModel from "../models/product.model.js";
-import userModel1 from "../models/users.model.js";
+import { productModel } from "../models/product.model.js";
+import {userModel1} from "../models/users.model.js";
 import DetallePedido from "../models/detallePedido.model.js";
 import Pedido from "../models/Pedido.model.js";
 
