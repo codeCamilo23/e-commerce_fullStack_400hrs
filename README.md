@@ -1,5 +1,7 @@
 # 🛒 E-Commerce Backend API
 
+El desarrollo de este sistema surge con el propósito de satisfacer las necesidades asociadas a la operación de un comercio electrónico, proporcionando una solución que permita gestionar de manera eficiente los productos, usuarios, carritos de compra y pedidos, al mismo tiempo que amplía la visibilidad de los productos y facilita el acceso de los clientes a la oferta comercial.
+
 Backend desarrollado con **Node.js**, **Express**, **MongoDB** y **Mongoose** para un sistema de comercio electrónico.
 
 Este proyecto implementa una API REST con autenticación mediante JWT, manejo de usuarios, productos, categorías, roles, carrito de compras y pedidos.
