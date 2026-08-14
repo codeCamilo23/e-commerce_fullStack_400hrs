@@ -1,6 +1,6 @@
-import detallePedidoModel from "../models/detallePedido.model.js";
-import pedidoModel from "../models/pedido.model.js";
-import {productModel} from "../models/product.model.js";
+import { detallePedidoModel } from "../models/detallePedido.model.js";
+import { pedidoModel } from "../models/pedido.model.js";
+import { productModel } from "../models/product.model.js";
 
 //1. Crear detalle de pedido (POST)
 export const createDetallePedido = async (req, res) => {

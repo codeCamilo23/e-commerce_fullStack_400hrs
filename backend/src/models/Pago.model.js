@@ -28,7 +28,7 @@ const pagoSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-export default mongoose.model("Pago", pagoSchema);
+export const pagoModel = mongoose.model("Pago", pagoSchema);

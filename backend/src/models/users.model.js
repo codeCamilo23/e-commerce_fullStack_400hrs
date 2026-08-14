@@ -21,6 +21,7 @@ const userSchema = new Schema({
     },
 
     rol:{
+        
         type: mongoose.Schema.Types.ObjectId,
         ref:"Rol",
         required:true

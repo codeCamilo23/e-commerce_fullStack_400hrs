@@ -13,13 +13,7 @@ const pedidoSchema = new mongoose.Schema(
     },
     estado: {
       type: String,
-      enum: [
-        "Pendiente",
-        "Pagado",
-        "Enviado",
-        "Entregado",
-        "Cancelado",
-      ],
+      enum: ["Pendiente", "Pagado", "Enviado", "Entregado", "Cancelado"],
       default: "Pendiente",
     },
     total: {
@@ -33,7 +27,8 @@ const pedidoSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-export default mongoose.model("Pedido", pedidoSchema);
+export const pedidoModel =
+  mongoose.models.Pedido || mongoose.model("Pedido", pedidoSchema);

@@ -1,8 +1,8 @@
-import carritoModel from "../models/Carrito.model.js";
+import {carritoModel} from "../models/Carrito.model.js";
 import { productModel } from "../models/product.model.js";
 import {userModel1} from "../models/users.model.js";
-import DetallePedido from "../models/detallePedido.model.js";
-import Pedido from "../models/Pedido.model.js";
+import {detallePedidoModel} from "../models/detallePedido.model.js";
+import {pedidoModel} from "../models/Pedido.model.js";
 
 //agregar un producto en el carrito
 //para eso uno findOne/populate()

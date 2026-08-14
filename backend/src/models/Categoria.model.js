@@ -9,13 +9,13 @@ const categoriaSchema = new mongoose.Schema(
     descripcion: {
       type: String,
     },
-      imagen: {
+    imagen: {
       type: String,
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-export default mongoose.model("categoria", categoriaSchema);
+export const categoriaModel = mongoose.model("categoria", categoriaSchema);

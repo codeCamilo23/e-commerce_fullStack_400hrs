@@ -39,4 +39,7 @@ detallePedidoSchema.index({
   pedido: 1,
 });
 
-export default mongoose.model("DetallePedido", detallePedidoSchema);
+export const detallePedidoModel = mongoose.model(
+  "detallepedido",
+  detallePedidoSchema,
+);
