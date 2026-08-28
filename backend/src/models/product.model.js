@@ -33,7 +33,7 @@ const productoSchema = new mongoose.Schema(
     },
     cantidad: {
       type: Number,
-      default: true,
+      default: 0,
     },
     disponible: {
       type: Boolean,

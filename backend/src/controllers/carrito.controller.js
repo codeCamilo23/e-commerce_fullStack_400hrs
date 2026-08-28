@@ -1,8 +1,8 @@
-import {carritoModel} from "../models/Carrito.model.js";
+import { carritoModel } from "../models/Carrito.model.js";
 import { productModel } from "../models/product.model.js";
-import {userModel1} from "../models/users.model.js";
-import {detallePedidoModel} from "../models/detallePedido.model.js";
-import {pedidoModel} from "../models/Pedido.model.js";
+import { userModel1 } from "../models/users.model.js";
+import { detallePedidoModel } from "../models/detallePedido.model.js";
+import { pedidoModel } from "../models/Pedido.model.js";
 
 //agregar un producto en el carrito
 //para eso uno findOne/populate()
@@ -27,7 +27,7 @@ export const addProductCarrito = async (req, res) => {
     }
 
     //2.buscar el carrito del ususario
-    let carrito = await CarritoModel.findOne({ usuario });
+    let carrito = await carritoModel.findOne({ usuario });
     //3. si el carrito no existe
     // crearlo automatixamente
     if (!carrito) {
