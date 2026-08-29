@@ -4,7 +4,7 @@ import { Products } from './pages/products/products';
 import { Forms } from './pages/forms/forms';
 import { NotFound} from './pages/not-found/not-found';
 import { Services } from "./pages/services/services";
-
+import { Carrito } from './pages/carrito/carrito';
 
 import { Component } from '@angular/core';
 
@@ -14,6 +14,7 @@ export const routes: Routes = [
    {path: 'products',component:Products,title:"Productos"},
    {path:'forms',component:Forms,title:"Formularios"},
    {path:'services',component:Services, title:"Servicios"},
+   {path:'carrito',component:Carrito,title:"Carrito"},
    {path:'**',component:NotFound,title:"pagina no encontrada"}
 
 ];

@@ -1,0 +1,174 @@
+/* Hero Section */
+.hero-section {
+  background-image: url('/assets/images/home-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px; /* Ajusta según necesites */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay oscuro para mejor legibilidad del texto */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Oscuridad: 0.4 = 40% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Contenido del hero */
+.hero-content {
+  text-align: center;
+  color: #0a2463;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-title {
+  display: inline-block;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: #0a2463;
+  background: rgba(255, 255, 255, 0.92);        /* recuadro claro */
+  padding: 0.6rem 1.1rem;                        /* espacio alrededor del texto */
+  border-radius: 10px;                           /* esquinas suaves */
+  box-shadow: 0 8px 20px rgba(10, 36, 99, 0.08); /* sombra suave */
+  border: 1px solid rgba(10, 36, 99, 0.06);      /* borde sutil para definición */
+  backdrop-filter: blur(6px);                    /* desenfoque de fondo (si se soporta) */
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Subtítulo con recuadro más discreto */
+.hero-sub {
+  display: inline-block;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  margin: 0;
+  color: #333;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+/* titulo categoria */
+.hero-sub-card{ 
+    display: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin: 0;
+  color: #0a2463;
+  background: rgba(255, 255, 255, 0.92);        /* recuadro claro */
+  padding: 0.6rem 1.1rem;
+
+}
+/* Botón destacado */
+.hero-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  font-weight: 700;
+  border-radius: 8px;
+  background: #ffd54a; /* amarillo comercial */
+  color: #0a2463;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(255, 213, 74, 0.18);
+  border: 1px solid rgba(10, 36, 99, 0.06);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+  .hero-section { height: auto; padding: 3rem 1rem; }
+  .hero-content { gap: 0.75rem; padding: 12px; }
+  .hero-title, .hero-sub { padding-left: 0.8rem; padding-right: 0.8rem; }
+}
+
+/* Cards Section */
+.cards-section {
+  padding: 40px 0;
+}
+
+.hero-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.hero-sub-card {
+  display: block;  /* ← Cambia a block, no center */
+  text-align: center;  /* ← Esto centra el texto */
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin: 0 0 2rem 0;  /* ← Espaciado inferior */
+  color: #0a2463;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;  /* ← Opcional: bordes redondeados */
+}
+
+.categories-section {
+  padding: 40px 0;
+}
+.hero-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h5 {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-body .card-text {
+  color: #666;
+  margin: 0;
+}
