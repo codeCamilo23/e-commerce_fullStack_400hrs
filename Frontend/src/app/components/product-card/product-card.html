@@ -1,0 +1,35 @@
+<div class="product-card">
+  <img
+    [src]="producto().imagen"
+    [alt]="producto().nombre"
+    class="product-image"
+  >
+
+  <div class="product-info">
+
+    <span class="product-category">
+      {{ producto().categoria }}
+    </span>
+
+    <h3>
+      {{ producto().nombre }}
+    </h3>
+
+    <p class="product-price">
+      {{ producto().precio | currency:'COP':'symbol':'1.0-0' }}
+    </p>
+
+    <button
+      type="button"
+      class="btn-cart"
+      (click)="agregar()">
+
+      <i class="bi bi-cart"></i>
+
+      Agregar al carrito
+
+    </button>
+
+  </div>
+
+</div> 
