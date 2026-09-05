@@ -13,11 +13,15 @@ export const addProductCarrito = async (req, res) => {
     const { usuario, producto, cantidad } = req.body;
 
     //validar cantidad
-    if (cantidad <= 0) {
+    if (
+      typeof cantidad !== "number" ||
+      Number.isNaN(cantidad) ||
+      cantidad <= 0) {
       return res.status(400).json({
         mensaje: "la cantidad debe ser mayor de cero.",
       });
     }
+
     //2.Verifico si el usuario existe
     const usuarioExiste = await userModel1.findById(usuario);
     if (!usuarioExiste) {
@@ -64,7 +68,8 @@ export const addProductCarrito = async (req, res) => {
       carrito.productos.push({
         producto,
         cantidad,
-        precioUnitario: productoEncontrado.precio * cantidad,
+        precioUnitario: productoEncontrado.precio,
+        subtotal: productoEncontrado.precio * cantidad,
       });
     }
 
@@ -81,13 +86,14 @@ export const addProductCarrito = async (req, res) => {
       .findById(carrito._id)
       .populate("usuario")
       .populate("productos.producto");
-    return res(200).json({
+      return res.status(200).json({
       mensaje: "producto agregado al carrito",
       totalProductos: carritoCompleto.productos.length,
       totalCompra: carritoCompleto.total,
       datos: carritoCompleto,
     });
   } catch (error) {
+    console.log(error)
     return res.status(400).json({
       mensaje: "Error al agregar producto al carrito.",
       problema: error.message,
