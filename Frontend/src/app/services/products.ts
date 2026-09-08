@@ -1,10 +1,10 @@
 import { Service } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { Product } from '../interfaces/products';
+import { Products } from '../interfaces/products';
 import { environment } from '../../environments/environment';
 @Service()
-export class Products {
+export class ProductsService {
   //1.inyectar dependencias
   _http = inject(HttpClient);
 
@@ -18,7 +18,7 @@ export class Products {
   //peticion post backend
 
   //1-creo la variable
-  crearProducto(producto: Product) {
+  crearProducto(producto: Products) {
     return this._http.post(this.URL_PRODUCTOS + '/crear',producto);
   }
   //peticion get
@@ -30,7 +30,7 @@ export class Products {
   //peticion put
   //necesito un id para editar y mostrar
   //para editar le tengo que decir que voy a editar
-  editarProducto(id:string , productoactualizado:Product) {
+  editarProducto(id:string , productoactualizado:Products) {
     return this._http.put(this.URL_PRODUCTOS  + '/actualizar' + id, productoactualizado);
   }
 

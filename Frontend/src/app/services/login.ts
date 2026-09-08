@@ -35,8 +35,8 @@ export class Login {
 
     }
 
-    //5.validar si el usuario esta logeado
-    estaLogeado():{
-       crearProducto(producto: Product) {
-           return this._http.post(this.URL_PRODUCTOS + '/crear',producto);
-         }
+   // 5. Validar si el usuario está logeado
+    estaLogeado(): boolean {
+        return !!localStorage.getItem('token');
+    }
+ }

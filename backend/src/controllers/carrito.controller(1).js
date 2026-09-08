@@ -1,4 +1,5 @@
 
+7
 import { carritoModel } from "../models/carrito.model.js";
 import { userModel1 } from "../models/Usuario.model.js";
 import { productModel } from "../models/product.model.js";
