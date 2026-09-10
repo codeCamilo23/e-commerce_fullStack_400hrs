@@ -37,6 +37,6 @@ export class Login {
 
    // 5. Validar si el usuario está logeado
     estaLogeado(): boolean {
-        return !!localStorage.getItem('token');
+        return !!localStorage.getItem('id_user');
     }
  }
