@@ -1,7 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 
 import { Component, input } from '@angular/core';
-import { Products } from '../../interfaces/products';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-product-card',
@@ -10,7 +10,7 @@ import { Products } from '../../interfaces/products';
   styleUrl: './product-card.css',
 })
 export class ProductCard {
-  producto = input.required<Products>();
+  producto = input.required<Product>();
   agregar(): void {
     console.log('Producto agregado', this.producto());
   }

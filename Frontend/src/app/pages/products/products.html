@@ -1,2 +1,69 @@
-<app-nav-bar></app-nav-bar>
+<div class="contenedor">
+  <h1>Gestion  de Productos</h1>
 
+  <!-- Formulario simple para crear -->
+  <form class="formulario" (ngSubmit)="crearProducto()">
+    <input
+      type="text"
+      placeholder="URL de la imagen"
+      [(ngModel)]="nuevoProducto.imagen"
+      name="image"
+      required
+    />
+    <input
+      type="text"
+      placeholder="Nombre del producto"
+      [(ngModel)]="nuevoProducto.nombre"
+      name="name"
+      required
+    />
+
+    <input
+      type="number"
+      placeholder="Precio"
+      [(ngModel)]="nuevoProducto.precio"
+      name="price"
+      required
+    />
+    <input
+      type="number"
+      placeholder="Stock"
+      [(ngModel)]="nuevoProducto.stock"
+      name="stock"
+      required
+    />
+    <button type="submit">Agregar</button>
+  </form>
+
+  <!-- Estado de carga -->
+  @if (cargando()) {
+    <p class="cargando">Cargando productos...</p>
+  }
+
+  <!-- Lista de productos -->
+  <div class="lista">
+    @for (producto of productos(); track producto._id) {
+      <div class="tarjeta">
+        <div class="imagen">
+          <img
+            [src]="producto.imagen || 'https://via.placeholder.com/300x200?text=Sin+imagen'"
+            [alt]="producto.nombre"
+          />
+        </div>
+        <div class="cuerpo">
+          <strong class="nombre">{{ producto.nombre }}</strong>
+          @if (producto.categoria) {
+            <span class="categoria">{{ producto.categoria }}</span>
+          }
+          <span class="precio">${{ producto.precio }}</span>
+          <span class="stock">Stock: {{ producto.stock }}</span>
+        </div>
+        <button class="btn-eliminar" (click)="eliminarProducto(producto._id)">
+          Eliminar
+        </button>
+      </div>
+    } @empty {
+      <p>No hay productos registrados.</p>
+    }
+  </div>
+</div>
