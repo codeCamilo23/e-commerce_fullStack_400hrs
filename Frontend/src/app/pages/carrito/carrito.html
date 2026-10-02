@@ -1,3 +1,174 @@
-<app-nav-bar></app-nav-bar>
+<div class="container py-4">
 
-<p>carrito works!</p>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Mi carrito</h2>
+
+    <button
+      *ngIf="productos().length > 0"
+      class="btn btn-outline-danger"
+      (click)="vaciarCarrito()"
+    >
+      Vaciar carrito
+    </button>
+  </div>
+
+  <!-- Carrito vacío -->
+  <div
+    *ngIf="productos().length === 0"
+    class="text-center py-5"
+  >
+    <h3>Tu carrito está vacío</h3>
+    <p class="text-muted">
+      Agrega algunos productos para comenzar tu compra.
+    </p>
+
+    <a
+      routerLink="/products"
+      class="btn btn-primary"
+    >
+      Ver productos
+    </a>
+  </div>
+
+  <!-- Productos -->
+  <div
+    *ngIf="productos().length > 0"
+    class="row g-4"
+  >
+
+    <!-- Lista -->
+    <div class="col-lg-8">
+
+      <div
+        *ngFor="let producto of productos()"
+        class="card mb-3"
+      >
+
+        <div class="card-body">
+
+          <div class="row align-items-center">
+
+            <!-- Imagen -->
+            <div class="col-md-2">
+              <img
+                [src]="producto.imagen"
+                [alt]="producto.nombre"
+                class="img-fluid rounded"
+              >
+            </div>
+
+            <!-- Información -->
+            <div class="col-md-4">
+
+              <h5 class="card-title">
+                {{ producto.nombre }}
+              </h5>
+
+              <p class="text-muted mb-0">
+                {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
+              </p>
+
+            </div>
+
+            <!-- Cantidad -->
+            <div class="col-md-3">
+
+              <div class="d-flex align-items-center gap-2">
+
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  (click)="disminuirCantidad(producto)"
+                >
+                  -
+                </button>
+
+                <span>
+                  {{ producto.cantidad }}
+                </span>
+
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  (click)="aumentarCantidad(producto)"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- Subtotal -->
+            <div class="col-md-2">
+
+              <strong>
+                {{ calcularSubtotal(producto) | currency:'COP':'symbol':'1.0-0' }}
+              </strong>
+
+            </div>
+
+            <!-- Eliminar -->
+            <div class="col-md-1">
+
+              <button
+                class="btn btn-outline-danger btn-sm"
+                (click)="eliminarProducto(producto._id)"
+              >
+                🗑️
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Resumen -->
+    <div class="col-lg-4">
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <h4 class="card-title mb-4">
+            Resumen de compra
+          </h4>
+
+          <div class="d-flex justify-content-between mb-3">
+            <span>Productos</span>
+
+            <span>
+              {{ productos().length }}
+            </span>
+          </div>
+
+          <hr>
+
+          <div class="d-flex justify-content-between mb-4">
+
+            <strong>Total</strong>
+
+            <strong>
+              {{ calcularTotal() | currency:'COP':'symbol':'1.0-0' }}
+            </strong>
+
+          </div>
+
+          <button
+            class="btn btn-primary w-100"
+          >
+            Continuar compra
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

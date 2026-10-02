@@ -90,7 +90,7 @@ export const loginUser = async (req, res) => {
 
     // 1. Buscamos al usuario por su correo
     const user = await userModel1.findOne({ correo });
-
+    console.log("usuario encontrado",user); 
     // Si no existe el usuario -> credenciales inválidas
     // (usamos un mensaje genérico para no revelar si el correo existe o no)
     if (!user) {

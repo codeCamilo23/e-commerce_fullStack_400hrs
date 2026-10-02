@@ -6,8 +6,6 @@ import { NotFound } from './pages/not-found/not-found';
 import { Login } from './pages/login/login';
 import { Carrito } from './pages/carrito/carrito';
 import {Registro} from './pages/registro/registro';
-import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 
 export const routes: Routes = [
@@ -20,3 +18,4 @@ export const routes: Routes = [
    {path: 'registro', component: Registro, title:'registro de usuario'},
   { path: '**', component: NotFound, title: 'pagina no encontrada' },
 ];
+

@@ -1,73 +1,90 @@
-<div class="login-container">
+  
+  <div class="login-container">
 
-  <div class="login-card">
+    <div class="login-card">
 
-    
-    <!-- Encabezado -->
-    <div class="login-header">
-      <div class="login-icon">
-        <i class="bi bi-person-circle"></i>
-      </div>
-
-      <h2>Iniciar sesión</h2>
-      <p>Ingresa a tu cuenta</p>
-    </div>
-
-    <!-- Formulario -->
-    <form>
-
-      <!-- Correo -->
-      <div class="form-group">
-        <label for="correo">
-          <i class="bi bi-envelope"></i>
-          Correo electrónico
-        </label>
-
-        <input type="email" id="correo" class="form-control" placeholder="Ingresa tu correo">
-      </div>
-
-      <!-- Contraseña -->
-      <div class="form-group">
-        <label for="password">
-          <i class="bi bi-lock"></i>
-          Contraseña
-        </label>
-
-        <input type="password" id="password" class="form-control" placeholder="Ingresa tu contraseña">
-      </div>
-
-      <!-- Recordarme -->
-      <div class="login-options">
-
-        <div>
-          <input type="checkbox" id="recordar">
-          <label for="recordar">Recordarme</label>
+      
+      <!-- Encabezado -->
+      <div class="login-header">
+        <div class="login-icon">
+          <i class="bi bi-person-circle"></i>
         </div>
 
-        <a href="#">¿Olvidaste tu contraseña?</a>
-        <p>
-          ¿No tienes una cuenta?
-          <a routerLink="/registro">Regístrate</a>
-        </p>
+        <h2>Iniciar sesión</h2>
+        <p>Ingresa a tu cuenta</p>
+      </div>
+
+      <!-- Formulario -->
+      <form (ngSubmit)="iniciarSesion()">
+
+        <!-- Correo -->
+        <div class="form-group">
+          <label for="correo">
+            <i class="bi bi-envelope"></i>
+            Correo electrónico
+          </label>
+
+          <input 
+          type="email" 
+          id="correo" 
+          class="form-control" 
+          placeholder="Ingresa tu correo"
+          [(ngModel)]="correo"
+          name="correo"
+          required
+          >
+
         </div>
 
-      <!-- Botón -->
-      <button type="submit" class="btn-login">
-        <i class="bi bi-box-arrow-in-right"></i>
-        Iniciar sesión
-      </button>
+        <!-- Contraseña -->
+        <div class="form-group">
+          <label for="password">
+            <i class="bi bi-lock"></i>
+            Contraseña
+          </label>
 
-    </form>
+          <input 
+          type="password"
+           id="password" 
+           class="form-control" 
+           placeholder="Ingresa tu contraseña"
+           [(ngModel)]="password"
+           name="password"
+           required
+           
+           >
+        </div>
 
-    <!-- Registro -->
-    <div class="register-link">
+        <!-- Recordarme -->
+        <div class="login-options">
 
-      <p>
-        ¿No tienes una cuenta?
+          <div>
+            <input type="checkbox" 
+            id="recordar"
+            >
+            <label for="recordar">Recordarme
 
-        <a routerLink="/registro">
-          Registrarse
-        </a>
-      </p>
+            </label>
+          </div>
 
-    </div>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+          
+          <p>
+            ¿No tienes una cuenta?
+            <a routerLink="/registro">Regístrate</a>
+          </p>
+          </div>
+
+        <!-- Botón -->
+        <button
+         type="submit" 
+         class="btn-login"
+         >
+          <i class="bi bi-box-arrow-in-right"></i>
+          Iniciar sesión
+        </button>
+
+      </form>
+
+     
+      

@@ -1,11 +1,14 @@
-/* =========================================
-   CONTENEDOR PRINCIPAL
-========================================= */
+* {
+  box-sizing: border-box;
+}
 
 .register-container {
+  width: 100%;
   min-height: calc(100vh - 70px);
+
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 42% 58%;
+
   background: #f5f9fc;
 }
 
@@ -17,84 +20,56 @@
 .register-info {
   background: linear-gradient(145deg, #0b1f3a, #123c68);
   color: white;
-  padding: 70px 60px;
+
+  padding: 25px 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   position: relative;
   overflow: hidden;
 }
 
-/* Decoración */
-
-.register-info::before {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: rgba(67, 190, 229, 0.12);
-  top: -120px;
-  right: -120px;
-}
-
-.register-info::after {
-  content: "";
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  bottom: -100px;
-  left: -80px;
-}
-
-
-/* Marca */
-
 .brand-badge {
-  display: inline-block;
   width: fit-content;
-  padding: 8px 15px;
-  border-radius: 30px;
+
+  padding: 6px 12px;
+  margin-bottom: 18px;
+
+  border-radius: 20px;
+
   background: rgba(79, 199, 232, 0.15);
   border: 1px solid rgba(79, 199, 232, 0.35);
+
   color: #67d5f2;
-  font-size: 13px;
+
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 25px;
-  position: relative;
-  z-index: 1;
 }
 
-
-/* Título */
-
 .register-info h1 {
-  font-size: 46px;
+  margin: 0 0 12px;
+
+  font-size: 34px;
   line-height: 1.1;
-  margin: 0 0 20px;
+
   font-weight: 800;
-  position: relative;
-  z-index: 1;
 }
 
 .register-info h1 span {
   color: #50c7e8;
 }
 
-
-/* Descripción */
-
 .register-info > p {
-  max-width: 520px;
+  max-width: 480px;
+
+  margin: 0 0 25px;
+
   color: #d8e6f2;
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 1;
+
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 
@@ -105,50 +80,54 @@
 .benefits {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  position: relative;
-  z-index: 1;
+  gap: 14px;
 }
 
 .benefit {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
 }
 
 .benefit-icon {
-  min-width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  font-size: 18px;
 }
 
 .benefit h3 {
-  margin: 0 0 5px;
-  font-size: 16px;
+  margin: 0 0 3px;
+
   color: white;
+
+  font-size: 14px;
 }
 
 .benefit p {
   margin: 0;
+
   color: #c4d7e7;
-  font-size: 14px;
-  line-height: 1.5;
+
+  font-size: 11px;
+  line-height: 1.4;
 }
 
-
-/* Seguridad */
-
 .security {
-  margin-top: 45px;
+  margin-top: 25px;
+
   color: #a9c4da;
-  font-size: 13px;
-  position: relative;
-  z-index: 1;
+
+  font-size: 11px;
 }
 
 
@@ -157,45 +136,54 @@
 ========================================= */
 
 .register-form-container {
-  background: #ffffff;
+  background: white;
+
   display: flex;
   justify-content: center;
-  padding: 45px 40px;
-  overflow-y: auto;
+  align-items: center;
+
+  padding: 20px 40px;
+
+  overflow: hidden;
 }
 
 .register-form {
   width: 100%;
-  max-width: 650px;
+  max-width: 590px;
 }
 
 
 /* =========================================
-   CABECERA DEL FORMULARIO
+   CABECERA
 ========================================= */
 
 .form-header {
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .step {
   color: #169cc5;
-  font-size: 13px;
+
+  font-size: 11px;
   font-weight: 700;
 }
 
 .form-header h2 {
+  margin: 4px 0;
+
   color: #0b1f3a;
-  font-size: 32px;
-  margin: 8px 0;
+
+  font-size: 25px;
   font-weight: 800;
 }
 
 .form-header p {
-  color: #66788a;
-  font-size: 14px;
-  line-height: 1.6;
   margin: 0;
+
+  color: #66788a;
+
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 
@@ -205,32 +193,34 @@
 
 .google-button {
   width: 100%;
-  height: 48px;
+  height: 38px;
+
   border: 1px solid #d8e1e8;
-  border-radius: 8px;
+  border-radius: 7px;
+
   background: white;
   color: #27384a;
-  font-size: 14px;
+
+  font-size: 12px;
   font-weight: 600;
+
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-
-  transition: 0.2s ease;
+  gap: 8px;
 }
 
 .google-button:hover {
   background: #f7fafc;
-  border-color: #b9c9d5;
 }
 
 .google-icon {
-  font-weight: 800;
-  font-size: 18px;
   color: #4285f4;
+
+  font-size: 15px;
+  font-weight: 800;
 }
 
 
@@ -241,17 +231,23 @@
 .separator {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin: 25px 0;
+  gap: 10px;
+
+  margin: 12px 0;
+
   color: #8b9aaa;
-  font-size: 12px;
+
+  font-size: 10px;
 }
 
 .separator::before,
 .separator::after {
   content: "";
+
   height: 1px;
+
   flex: 1;
+
   background: #e2e8ee;
 }
 
@@ -263,65 +259,79 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+
+  gap: 10px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+
+  gap: 12px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+
+  gap: 4px;
 }
 
 .form-group label {
   color: #26384b;
-  font-size: 13px;
+
+  font-size: 11px;
   font-weight: 700;
 }
 
 
-/* Inputs */
+/* =========================================
+   INPUTS
+========================================= */
 
 .input-container,
 .phone-container {
-  height: 46px;
+  height: 36px;
+
   border: 1px solid #d7e1e8;
-  border-radius: 8px;
+  border-radius: 6px;
+
   background: white;
 
   display: flex;
   align-items: center;
-
-  transition: 0.2s ease;
 }
 
 .input-container:focus-within,
 .phone-container:focus-within {
   border-color: #26a9d6;
-  box-shadow: 0 0 0 3px rgba(38, 169, 214, 0.12);
+
+  box-shadow: 0 0 0 2px rgba(38, 169, 214, 0.12);
 }
 
 .input-icon {
-  width: 42px;
+  width: 34px;
+
   text-align: center;
-  font-size: 16px;
+
+  font-size: 13px;
 }
 
 .input-container input,
 .phone-container input {
+  width: 100%;
+  height: 100%;
+
   border: none;
   outline: none;
-  height: 100%;
-  flex: 1;
-  padding: 0 10px;
-  font-size: 14px;
-  color: #26384b;
+
+  padding: 0 8px;
+
   background: transparent;
+
+  color: #26384b;
+
+  font-size: 12px;
 }
 
 .input-container input::placeholder,
@@ -330,63 +340,78 @@ form {
 }
 
 
-/* Teléfono */
+/* =========================================
+   TELÉFONO
+========================================= */
 
 .country-code {
   height: 100%;
+
+  padding: 0 9px;
+
   display: flex;
   align-items: center;
-  padding: 0 12px;
+
   border-right: 1px solid #e0e7ed;
-  font-size: 13px;
+
   color: #526579;
+
+  font-size: 11px;
+
   white-space: nowrap;
 }
 
 
 /* =========================================
-   BOTÓN MOSTRAR PASSWORD
+   PASSWORD
 ========================================= */
 
 .password-button {
   border: none;
+
+  padding: 0 9px;
+
   background: transparent;
+
   cursor: pointer;
-  padding: 0 12px;
-  font-size: 16px;
+
+  font-size: 13px;
 }
 
 
 /* =========================================
-   FUERZA DE CONTRASEÑA
+   FUERZA PASSWORD
 ========================================= */
 
 .password-strength {
-  margin-top: -8px;
+  margin-top: -4px;
 }
 
 .strength-bars {
   display: flex;
-  gap: 5px;
-  margin-bottom: 5px;
+
+  gap: 4px;
+
+  margin-bottom: 3px;
 }
 
 .strength-bars span {
-  height: 4px;
+  height: 3px;
+
   flex: 1;
-  border-radius: 10px;
+
+  border-radius: 5px;
+
   background: #e2e8ed;
 }
 
 .strength-text {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
-  color: #8997a5;
-}
 
-.strength-text strong {
   color: #8997a5;
+
+  font-size: 9px;
 }
 
 
@@ -397,28 +422,37 @@ form {
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  gap: 6px;
+
   margin-top: 2px;
 }
 
 .terms label {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
+
+  gap: 6px;
+
   color: #66788a;
-  font-size: 12px;
-  line-height: 1.5;
+
+  font-size: 9px;
+  line-height: 1.3;
+
   cursor: pointer;
 }
 
 .terms input[type="checkbox"] {
-  margin-top: 3px;
+  margin-top: 1px;
+
   accent-color: #159fc9;
 }
 
 .terms a {
   color: #139bc4;
+
   font-weight: 600;
+
   text-decoration: none;
 }
 
@@ -433,14 +467,16 @@ form {
 
 .register-button {
   width: 100%;
-  height: 50px;
+  height: 40px;
+
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
 
   background: linear-gradient(135deg, #0b76a8, #16afd2);
+
   color: white;
 
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
 
   cursor: pointer;
@@ -448,20 +484,20 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 
-  box-shadow: 0 5px 15px rgba(13, 151, 194, 0.22);
+  gap: 8px;
+
+  box-shadow: 0 4px 10px rgba(13, 151, 194, 0.2);
 
   transition: 0.2s ease;
 }
 
 .register-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 7px 18px rgba(13, 151, 194, 0.3);
 }
 
 .register-button span {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
@@ -470,15 +506,20 @@ form {
 ========================================= */
 
 .login-link {
+  margin-top: 12px;
+
   text-align: center;
-  margin-top: 22px;
+
   color: #718092;
-  font-size: 13px;
+
+  font-size: 10px;
 }
 
 .login-link a {
   color: #119dc8;
+
   font-weight: 700;
+
   text-decoration: none;
 }
 
@@ -492,21 +533,25 @@ form {
 ========================================= */
 
 .trust {
-  margin-top: 25px;
-  padding-top: 18px;
+  margin-top: 12px;
+
+  padding-top: 9px;
+
   border-top: 1px solid #edf1f4;
 
   display: flex;
   justify-content: center;
-  gap: 20px;
+
+  gap: 15px;
 
   color: #8493a1;
-  font-size: 11px;
+
+  font-size: 8px;
 }
 
 
 /* =========================================
-   RESPONSIVE - TABLET
+   TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
@@ -516,51 +561,58 @@ form {
   }
 
   .register-info {
-    padding: 45px 35px;
+    padding: 30px;
   }
 
   .register-info h1 {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .benefits {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
   }
 
-  .security {
-    margin-top: 30px;
+  .register-form-container {
+    padding: 30px;
   }
-
 }
 
 
 /* =========================================
-   RESPONSIVE - CELULAR
+   CELULAR
 ========================================= */
 
 @media (max-width: 650px) {
 
+  .register-container {
+    display: block;
+
+    min-height: calc(100vh - 70px);
+
+    overflow: visible;
+  }
+
   .register-info {
-    padding: 35px 25px;
+    padding: 30px 20px;
   }
 
   .register-info h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .register-info > p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .benefits {
     display: flex;
-    gap: 18px;
   }
 
   .register-form-container {
-    padding: 35px 20px;
+    padding: 25px 20px;
+
+    overflow: visible;
   }
 
   .form-row {
@@ -568,13 +620,13 @@ form {
   }
 
   .form-header h2 {
-    font-size: 27px;
+    font-size: 23px;
   }
 
   .trust {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-  }
 
+    gap: 6px;
+  }
 }

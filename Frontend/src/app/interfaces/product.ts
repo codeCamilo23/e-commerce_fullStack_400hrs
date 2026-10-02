@@ -6,7 +6,7 @@ export interface Product {
   stock: number; //
 
   imagen?: string;
-  categoria: string;
+  categoria?: string;
   estado: boolean;
   cantidad: number;
   disponible?: boolean; //parametro no requerido  --> ?

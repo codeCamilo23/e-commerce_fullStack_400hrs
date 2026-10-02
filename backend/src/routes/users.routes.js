@@ -1,7 +1,6 @@
 import  {createUser, deleteUserById} from "../controllers/usuario.controller.js";
 import {showUsers} from "../controllers/usuario.controller.js";
 import {loginUser} from "../controllers/usuario.controller.js";
-import { deleteModel } from "mongoose";
 
 import express from "express";
 

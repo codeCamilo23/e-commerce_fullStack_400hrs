@@ -1,7 +1,10 @@
 import { CurrencyPipe } from '@angular/common';
 
-import { Component, input } from '@angular/core';
+import { Component, Injectable, input } from '@angular/core';
 import { Product } from '../../interfaces/product';
+
+Injectable
+
 
 @Component({
   selector: 'app-product-card',
